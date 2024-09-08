@@ -41,4 +41,16 @@ When I was running through this, it was at this point that I began receiving err
 
 From this point, I decided to take the information that it was failing to setup the synchronization service, and went to Google. At this point I found <a href="https://www.reddit.com/r/Office365/comments/1e6n13g/azure_entra_active_directory_connect_issue_at_my/">this</a> Reddit post stating that in a some what recent update, TLS 1.2 needs to be enabled on the server for the sync to be setup. TLS is what Entra uses to securely transfer data between the on-prem server and the cloud. For anyone unaware what TLS is, it's an encryption standard, and is very common across web applications to securely transfer data. 
 
+Luckily Microsoft made it easy for us and posted a step-by-step on how to enable TLS 1.2 <a href="https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/reference-connect-tls-enforcement#enable-tls-12">here</a>. We can either registry hack or run a PS script, I ran the script simply because it is instantaneous, but whatever suits your fancy. You can run the initial script at the top to verify whether TLS 1.2 has been successfully implemented after the fact. 
+
+<h2>Completing the connection</h2>
+
+Once TLS has been implemented on the server, we are done! A retry of the connection came back with a 'Configuration Complete' Message. I am now receiving Azure alerts to my email when a synchronization heartbeat is missed, and can verify the sync is setup by viewing the 'Managed Service Accounts' OU in AD. When creating Entra Connect sync a user account is automatically created that is used for the syncing process, which we can see here. 
+
+<img src="https://imgur.com/ySliQED.png" height="50%" width="60%" alt="Assigned Roles"/>
+
+<h2>Topology Update</h2>
+
+Below is a picture of our environments current topology, I plan to add these at the end of each Repository to track the growth over time. Hope you enjoyed! 
+
 <img src="https://imgur.com/zhBFu5z.png" height="50%" width="50%" alt="Current Topology"/>
