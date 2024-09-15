@@ -51,6 +51,6 @@ Once TLS has been implemented on the server, we are done! A retry of the connect
 
 <h2>Topology Update</h2>
 
-Below is a picture of our environments current topology, I plan to add these at the end of each Repository to track the growth over time. Hope you enjoyed! 
+Below is a picture of our environments current topology, I plan to add these at the end of each Repository to track the growth over time. 
 
 <img src="https://imgur.com/zhBFu5z.png" height="50%" width="50%" alt="Current Topology"/>
