@@ -1,5 +1,7 @@
 # Connecting-On-premise-DC-to-Entra
 
+<img src="https://imgur.com/zhBFu5z.png" height="50%" width="50%" alt="Current Topology"/>
+
 <h2>Technologies Used</h2>
 
 - Windows Server 2022 
@@ -48,9 +50,3 @@ Luckily Microsoft made it easy for us and posted a step-by-step on how to enable
 Once TLS has been implemented on the server, we are done! A retry of the connection came back with a 'Configuration Complete' Message. I am now receiving Azure alerts to my email when a synchronization heartbeat is missed, and can verify the sync is setup by viewing the 'Managed Service Accounts' OU in AD. When creating Entra Connect sync a user account is automatically created that is used for the syncing process, which we can see here. 
 
 <img src="https://imgur.com/ySliQED.png" height="50%" width="60%" alt="Assigned Roles"/>
-
-<h2>Topology Update</h2>
-
-Below is a picture of our environments current topology, I plan to add these at the end of each Repository to track the growth over time. 
-
-<img src="https://imgur.com/zhBFu5z.png" height="50%" width="50%" alt="Current Topology"/>
